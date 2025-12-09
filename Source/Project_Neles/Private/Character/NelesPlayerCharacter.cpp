@@ -62,8 +62,6 @@ ANelesPlayerCharacter::ANelesPlayerCharacter()
 void ANelesPlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-
-	//×¢²áÎ¯ÍÐ
 	if (UNelesInputComponent* InputComp = this->NelesInputComponent)
 	{
 		InputComp->MoveEventSignature.AddDynamic(this, &ANelesPlayerCharacter::Move);

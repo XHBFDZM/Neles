@@ -6,9 +6,6 @@
 #include "GameFramework/Character.h"
 #include "NelesEnemyCharacterBase.generated.h"
 
-class UStateTreeComponent;
-class UAIPerceptionComponent;
-
 UCLASS()
 class PROJECT_NELES_API ANelesEnemyCharacterBase : public ACharacter
 {
@@ -29,9 +26,5 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 private:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI", meta = (AllowPrivateAccess = "true"))
-	TObjectPtr<UStateTreeComponent> StateTreeComponent;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI", meta = (AllowPrivateAccess = "true"))
-	TObjectPtr<UAIPerceptionComponent> AIPerceptionComponent;
 };

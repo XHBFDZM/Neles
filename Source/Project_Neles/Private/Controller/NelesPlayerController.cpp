@@ -11,12 +11,12 @@
 
 ANelesPlayerController::ANelesPlayerController()
 {
-
+	this->SetGenericTeamId(FGenericTeamId(1));
 }
 
 void ANelesPlayerController::BeginPlay()
 {
-
+	Super::BeginPlay();
 }
 
 void ANelesPlayerController::SetupInputComponent()
@@ -27,7 +27,7 @@ void ANelesPlayerController::SetupInputComponent()
 	if (!LocalPlayer) return;
 	UEnhancedInputLocalPlayerSubsystem* Subsystem = LocalPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>();
 	if (!Subsystem) return;
-	//Ä¬ÈÏIMC
+	//Ä¬ï¿½IMC
 	UInputMappingContext* InputMappingContext = NelesInputMappingData->DefaultInputMappingContext;
 	if (!InputMappingContext) return;
 	Subsystem->AddMappingContext(InputMappingContext, 0);
@@ -42,5 +42,13 @@ void ANelesPlayerController::OnPossess(APawn* aPawn) {
 	}
 	UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(InputComponent);
 	NelesPlayerCharacter->NelesInputComponent->BindInputEvent(EnhancedInputComponent);
+}
+
+void ANelesPlayerController::SetGenericTeamId(const FGenericTeamId& NewTeamID)
+{
+	if (TeamID != NewTeamID)
+	{
+		TeamID = NewTeamID;
+	}
 }
 

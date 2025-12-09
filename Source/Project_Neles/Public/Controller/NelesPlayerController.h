@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "GenericTeamAgentInterface.h"
 #include "NelesPlayerController.generated.h"
 
 
@@ -13,7 +14,7 @@ class UNelesInputMappingData;
  * 
  */
 UCLASS()
-class PROJECT_NELES_API ANelesPlayerController : public APlayerController
+class PROJECT_NELES_API ANelesPlayerController : public APlayerController, public IGenericTeamAgentInterface
 {
 	GENERATED_BODY()
 public:
@@ -27,4 +28,10 @@ private:
 	virtual void SetupInputComponent() override;
 public:
 	void OnPossess(APawn* aPawn) override;
+public:
+	FGenericTeamId TeamID;
+	UFUNCTION(BlueprintCallable)
+	virtual void SetGenericTeamId(const FGenericTeamId& NewTeamID) override;
+	UFUNCTION(BlueprintCallable)
+	virtual FGenericTeamId GetGenericTeamId() const override { return TeamID; }
 };

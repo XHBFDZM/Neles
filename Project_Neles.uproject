@@ -9,23 +9,24 @@
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
 			"AdditionalDependencies": [
-				"Engine"
+				"Engine",
+				"AIModule"
 			]
 		}
 	],
 	"Plugins": [
-{
-            "Name": "StateTree",
-            "Enabled": true
-        },
-        {
-            "Name": "ModularGameplay",
-            "Enabled": true
-        },
-        {
-            "Name": "GameplayStateTree",
-            "Enabled": true
-        },
+		{
+			"Name": "StateTree",
+			"Enabled": true
+		},
+		{
+			"Name": "ModularGameplay",
+			"Enabled": true
+		},
+		{
+			"Name": "GameplayStateTree",
+			"Enabled": true
+		},
 		{
 			"Name": "ModelingToolsEditorMode",
 			"Enabled": true,
