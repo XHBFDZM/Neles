@@ -6,9 +6,11 @@
 #include "Character/NelesCharacterBase.h"
 #include "NelesPlayerCharacter.generated.h"
 
+
+class UNelesInputComponent;
+class UNelesCameraComponent;
 class USpringArmComponent;
 class UCameraComponent;
-class UNelesInputComponent;
 
 /**
  * 
@@ -24,10 +26,11 @@ protected:
 public:
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<UNelesInputComponent> NelesInputComponent;
-private:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<UNelesCameraComponent> NelesCameraComponent;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	USpringArmComponent* CameraBoom;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* FollowCamera;
 public:
 	UFUNCTION()

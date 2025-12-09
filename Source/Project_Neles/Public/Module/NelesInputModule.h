@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class PROJECT_NELES_API UNelesInputModule : public UObject
+class PROJECT_NELES_API UNelesInputModule : public UObject 
 {
 	GENERATED_BODY()
 	

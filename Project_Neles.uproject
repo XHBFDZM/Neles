@@ -1,16 +1,31 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.5",
+	"EngineAssociation": "5.6",
 	"Category": "",
 	"Description": "",
 	"Modules": [
 		{
 			"Name": "Project_Neles",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
 		}
 	],
 	"Plugins": [
+{
+            "Name": "StateTree",
+            "Enabled": true
+        },
+        {
+            "Name": "ModularGameplay",
+            "Enabled": true
+        },
+        {
+            "Name": "GameplayStateTree",
+            "Enabled": true
+        },
 		{
 			"Name": "ModelingToolsEditorMode",
 			"Enabled": true,
@@ -24,10 +39,41 @@
 			"SupportedTargetPlatforms": [
 				"Win64",
 				"Linux"
+			],
+			"TargetAllowList": [
+				"Editor"
 			]
 		},
 		{
 			"Name": "MetaHumanRuntime",
+			"Enabled": false
+		},
+		{
+			"Name": "MetaHumanCharacter",
+			"Enabled": true
+		},
+		{
+			"Name": "MotionWarping",
+			"Enabled": true
+		},
+		{
+			"Name": "PoseSearch",
+			"Enabled": true
+		},
+		{
+			"Name": "MotionTrajectory",
+			"Enabled": true
+		},
+		{
+			"Name": "AnimationWarping",
+			"Enabled": true
+		},
+		{
+			"Name": "Chooser",
+			"Enabled": true
+		},
+		{
+			"Name": "AnimationLocomotionLibrary",
 			"Enabled": true
 		}
 	]
