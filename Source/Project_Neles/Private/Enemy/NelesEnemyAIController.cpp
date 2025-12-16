@@ -40,5 +40,6 @@ void ANelesEnemyAIController::OnTargetActorUpdated(AActor* Actor, FAIStimulus St
 	if (this->StateTreeAIComponent)
 	{  
 		AIContextComponent->TargetActor = Actor;
+		this->StateTreeAIComponent->SendStateTreeEvent(FStateTreeEvent(FGameplayTag::RequestGameplayTag("Event.TargetPerceptionUpdated")));
 	}
 }
